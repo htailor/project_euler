@@ -24,6 +24,8 @@ int Problem1(const int &x){
 	return sum;
 }
 
+
+// Analytical Solution
 int MultipleSum(int x, int multiple){
 	x = std::floor((x-1)/multiple);
 	return multiple*x*(x+1)/2;
