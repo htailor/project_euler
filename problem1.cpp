@@ -23,6 +23,10 @@ int Answer1(const int &x){
 	return sum;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 65331c72b80b5f05306c25670c36ccb9501dc50c
 // Analytical Solution
 int MultipleSum(int x, int multiple){
 	x = std::floor((x-1)/multiple);
