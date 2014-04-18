@@ -13,68 +13,59 @@
 *******************************************************************************************/
 
 #include <iostream>
-#include <vector>
 
-int problem2(const int &x){
+int Answer1(const int &x){
 
-	int sum = 2;
-	
-	int value = 0;
-	std::vector<int> fibonacci;
-	fibonacci.push_back(1);		// idx = 0
-	fibonacci.push_back(2);		// idx = 1
-	int idx = 2;
+	int Ha = 1;
+	int Hb = 1;
+
+	int value = Ha + Hb;
+	int sum = 0;
 	
 	while(value < x){
-	
-		value = fibonacci[idx-2]+fibonacci[idx-1];
-		fibonacci.push_back(value);
-		idx++;
-		
-		if(value % 2 ==0){
+
+		if(value % 2 == 0){
 			sum = sum + value;
 		}
-		
+
+		Ha = Hb;
+		Hb = value;
+		value = Ha + Hb;
 	}
 	
 	return sum;
 }
 
+int Answer2(const int &x){
 
-int test(const int &x){
+	int Ha = 2;
+	int Hb = 8;
 
-	int a = 1;
-	int b = 2;
+	int value = Hb;
+	int sum = Ha;
+	
+	while(value < x){
 
-	int sum = b;
+		sum = sum + value;
+		value = 4*Hb + Ha;
 
-	while(a < x && b < x){
-
-		a = a + b;
-		b = b + a;
-
-		if(a % 2 == 0){
-			sum = sum + a;
-		}
-
-		if(b % 2 == 0){
-			sum = sum + b;
-		}
+		Ha = Hb;
+		Hb = value;
 	}
-
+	
 	return sum;
 }
-
-
 
 
 int main(int argc, char* argv[]){
 
 	std::cout << "Even Fibonacci numbers" << std::endl;
 	std::cout << "======================" << std::endl;
-	
+
 	int upper_bound = 4000000;
-	std::cout << "Answer: " << problem2(upper_bound) << std::endl;
-	std::cout << "Answer: " << test(upper_bound) << std::endl;
+
+	std::cout << "Answer: " << Answer1(upper_bound) << std::endl;
+	std::cout << "Answer: " << Answer2(upper_bound) << std::endl;
+
 	return 0;
 }

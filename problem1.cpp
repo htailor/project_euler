@@ -11,9 +11,8 @@
 
 #include <iostream>
 #include <cmath>
-#include <runtime.hpp>
 
-int Problem1(const int &x){
+int Answer1(const int &x){
 
 	int sum = 0;
 	for(int i = 0; i < x; i++){
@@ -24,12 +23,13 @@ int Problem1(const int &x){
 	return sum;
 }
 
+// Analytical Solution
 int MultipleSum(int x, int multiple){
 	x = std::floor((x-1)/multiple);
 	return multiple*x*(x+1)/2;
 }
 
-int AnalyticalProblem1(int x){
+int AnalyticalAnswer1(int x){
 	return MultipleSum(x,3) + MultipleSum(x,5) - MultipleSum(x,15);
 }
 
@@ -39,21 +39,11 @@ int main(int argc, char* argv[]){
 	std::cout << "Multiples of 3 and 5" << std::endl;
 	std::cout << "====================" << std::endl;
 
-	Runtime timer;
-		
-	//int upper_bound = 1000;
-	int upper_bound = 1000000000;
+	int upper_bound = 1000;
 	
-	timer.Start();
-	std::cout << "Answer: " << Problem1(upper_bound) << std::endl;	
-	timer.Stop();
-	
-	timer.Start();
-	std::cout << "Answer: " << AnalyticalProblem1(upper_bound) << std::endl;	
-	timer.Stop();
-	
-	
-	
+	std::cout << "Answer: " << Answer1(upper_bound) << std::endl;	
+
+	std::cout << "Answer: " << AnalyticalAnswer1(upper_bound) << std::endl;	
 	
 	return 0;
 }
