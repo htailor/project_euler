@@ -11,7 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
-#include "runtime.hpp"
+#include <runtime.hpp>
 
 bool isPrime(const int &x){
 	
