@@ -1,5 +1,5 @@
 
-CC = g++
+CC = g++ -Ilib
 COMPILE = $(CC)
 
 BINARY_FILES = $(patsubst %.cpp, %, $(wildcard *.cpp))
