@@ -16,4 +16,4 @@ all: $(BINARY_FILES)
 	$(COMPILE) $< -o $@
 
 clean: 
-	rm -rf $(BINARY_FILES)
+	rm -rf $(BINARY_FILES) *.exe

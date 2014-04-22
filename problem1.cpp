@@ -40,9 +40,7 @@ int main(int argc, char* argv[]){
 	std::cout << "====================" << std::endl;
 
 	int upper_bound = 1000;
-	
 	std::cout << "Answer: " << Answer1(upper_bound) << std::endl;	
-
 	std::cout << "Answer: " << AnalyticalAnswer1(upper_bound) << std::endl;	
 	
 	return 0;
