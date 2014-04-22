@@ -29,11 +29,11 @@ bool isPrime(const int &x){
 	return false;
 }
 
-int FindLowestPrimeFactor(int x){
+unsigned int FindLowestPrimeFactor(const unsigned int &x){
 
-	int lowest_prime_factor = 1;
+	unsigned int lowest_prime_factor = 1;
 
-	for(int i = 2; i <= x; i++){
+	for(unsigned int i = 2; i <= x; i++){
 		if(x % i==0 && isPrime(i)){
 			lowest_prime_factor = i;
 			break;
@@ -43,13 +43,14 @@ int FindLowestPrimeFactor(int x){
 }
 
 
-unsigned int Answer1(const int &x){
+unsigned int Answer1(const unsigned int &x){
 
 	unsigned int smallest_multiple = 1;
 
-	for(int i = 2; i <= x; i++){
+	for(unsigned int i = 2; i <= x; i++){
 		int r = smallest_multiple % i;
 		if(r==0){
+			// if r==0 then i is already a multiple
 		}
 		else if(r!=0 && isPrime(i)){ 
 			smallest_multiple = smallest_multiple * i;
@@ -63,10 +64,10 @@ unsigned int Answer1(const int &x){
 
 unsigned int Answer2(const int &x){
 
-	int smallest_factor = 1;
+	unsigned int smallest_factor = 1;
 	double logx = log(x);
 
-	for(int i = 2; i <= 20; i++){
+	for(unsigned int i = 2; i <= 20; i++){
 		if(isPrime(i)){
 			smallest_factor = smallest_factor * pow(i, static_cast<int>(std::floor(logx/log(i))));
 		}
