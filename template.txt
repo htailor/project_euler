@@ -1,0 +1,28 @@
+/******************************************************************************************
+
+	Problem  - 
+	
+
+*******************************************************************************************/
+
+#include <iostream>
+#include <runtime.hpp>
+
+int Answer1(const int &number_size){
+
+	return 0;
+}
+
+
+int main(int argc, char* argv[]){
+
+	std::cout << " " << std::endl;
+	std::cout << "=" << std::endl;
+	
+	Runtime timer;
+	timer.Start();
+	std::cout << "Answer: " << Answer1(3) << std::endl;
+	timer.Stop();
+	
+	return 0;
+}
