@@ -16,17 +16,12 @@
 
 bool isPrime(const int &x){
 
-	/*
-	 *	Apart from numbers 2 and 3, all other prime numbers are
-	 *	determined from 6k +/- 1, where k is a real integer.
-	 *
-	 */
-
-	if(x == 2 || x == 3 || (x - 1) % 6 == 0 || (x + 1) % 6 == 0 ){
-		return true;
+	for(int i = 2; i <= std::floor(sqrt(x)); i++){
+		if(x % i == 0){
+			return false;
+		}
 	}
-
-	return false;
+	return true;
 }
 
 unsigned int FindLowestPrimeFactor(const unsigned int &x){

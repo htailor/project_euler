@@ -13,11 +13,9 @@
 #include <set>
 #include <runtime.hpp>
 
-
-
 int Answer1(const int &nth_prime){
 
-	return prime_number;
+	return 0;
 }
 
 
