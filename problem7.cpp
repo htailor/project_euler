@@ -10,12 +10,23 @@
 *******************************************************************************************/
 
 #include <iostream>
-#include <set>
+#include <prime.hpp>
 #include <runtime.hpp>
 
 int Answer1(const int &nth_prime){
 
-	return 0;
+	unsigned int count = 1;
+	unsigned int number = 3;
+	unsigned int prime_number = 2;
+
+	while(count < nth_prime){
+		if(isPrime(number)){
+			count++;
+			prime_number = number;
+		}
+		number = number + 2;
+	}
+	return prime_number;
 }
 
 
